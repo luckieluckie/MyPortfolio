@@ -6,9 +6,9 @@ import React, { useRef } from 'react'
 const Target = (props) => {
 
   const targetRef = useRef();
-  const { scene }= useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf')
+  const { scene } = useGLTF('models/c-logo.glb');
 
-  useGSAP(()=> {
+  useGSAP(() => {
     gsap.to(targetRef.current.position, {
       y: targetRef.current.position.y + 0.5,
       duration: 1.5,
@@ -18,7 +18,7 @@ const Target = (props) => {
   })
 
   return (
-    <mesh {...props} ref={targetRef} rotation={[0, Math.PI/5, 0]} position={[-8, -7.5, -0.7]}>
+    <mesh {...props} ref={targetRef} rotation={[0, 0, 0]} scale={0.05}>
       <primitive object={scene} />
     </mesh>
   )

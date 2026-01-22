@@ -6,20 +6,25 @@ import Projects from './sections/Projects'
 import Clients from './sections/Clients'
 import Footer from './sections/Footer'
 import Experience from './sections/Experience'
+import Contact from './sections/Contact'
+import ErrorBoundary from './components/ErrorBoundary'
 
 
 const App = () => {
   return (
-    <main className='max-w-7xl mx-auto'>
-      <Navbar />
-      <Hero/>
-      <About/>
-      <Projects/>
-      <Clients/>
-      <Experience/>
-      <Footer/>
+    <ErrorBoundary>
+      <main className='max-w-7xl mx-auto'>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Clients />
+        <Experience />
+        <Contact />
+        <Footer />
 
-    </main>
+      </main>
+    </ErrorBoundary>
   )
 }
 

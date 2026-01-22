@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Button = ({ name, isBeam= false, containerClass}) => {
+const Button = ({ name, isBeam = false, containerClass, ...props }) => {
   return (
-    <button className={`btn ${containerClass}`} >
-        {isBeam &&(
-            <span className='relative flex w-3 h-3'>
-                <span className='btn-ping' />
-                <span className='btn-ping_dot' />
-            </span>
-        )}
-        {name}
+    <button className={`btn ${containerClass}`} {...props} >
+      {isBeam && (
+        <span className='relative flex w-3 h-3'>
+          <span className='btn-ping' />
+          <span className='btn-ping_dot' />
+        </span>
+      )}
+      {name}
     </button>
   )
 }
