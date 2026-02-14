@@ -170,6 +170,43 @@ export const myProjects = [
     ],
   },
   {
+    title: 'Privacy PDF Editor',
+    desc: 'Edit PDFs & DOCX Files Privately No uploads. No tracking. All processing happens on your device. Zero analytics, no cookies, no data collection. ',
+    subdesc:
+      'Built with React, TailwindCSS, and WebAssembly, Privacy PDF Editor is a privacy-first PDF and DOCX editor that performs all operations locally in your browser using WebAssembly. No uploads, no tracking, complete privacy.',
+    href: 'https://privacy-pdf-nu.vercel.app/',
+    texture: '/textures/project/privacypdf.mp4',
+    logo: '/assets/pdflogo.png',
+    logoStyle: {
+      backgroundColor: '#0f0b28ff',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #532fb54d',
+    },
+    spotlight: '/assets/spotlight4.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'HTML',
+        path: '/assets/html5.png',
+      },
+    ],
+  },
+  {
     title: 'VehiQl - An AI integrated car marketplace',
     desc: 'VehiQl is an AI-powered car marketplace that uses advanced AI algorithms to provide personalized recommendations to users based on their preferences and search history.',
     subdesc:
