@@ -1,5 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
 import { workExperiences } from '../constants';
 import { OrbitControls } from '@react-three/drei';
 import CanvasLoader from '../components/CanvasLoader';
@@ -7,6 +9,8 @@ import Developer from '../components/Developer';
 
 const Experience = () => {
     const [animationName, setAnimationName] = useState('idle');
+    const isSmall = useMediaQuery({ maxWidth: 768 });
+
 
     return (
         <section className='c-space my-20' id="experience">
@@ -14,15 +18,17 @@ const Experience = () => {
                 <h3 className='head-text'>My Journey</h3>
                 <div className="work-container">
                     <div className="work-canvas">
-                        <Canvas>
-                            <ambientLight intensity={7} />
-                            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-                            <directionalLight position={[10, 10, 10]} intensity={1} />
-                            <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-                            <Suspense fallback={<CanvasLoader />}>
-                                <Developer position-y={-3} scale={3} animationName={animationName} />
-                            </Suspense>
-                        </Canvas>
+                        {!isSmall && (
+                            <Canvas>
+                                <ambientLight intensity={7} />
+                                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                                <directionalLight position={[10, 10, 10]} intensity={1} />
+                                <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+                                <Suspense fallback={<CanvasLoader />}>
+                                    <Developer position-y={-3} scale={3} animationName={animationName} />
+                                </Suspense>
+                            </Canvas>
+                        )}
                     </div>
                     <div className="work-content">
                         <div className="py-5 sm:py-10 px-2.5 sm:px-2.5">
